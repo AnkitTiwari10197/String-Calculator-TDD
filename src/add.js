@@ -5,8 +5,8 @@ function stringCalculator(expression){
         return 0;
     }
 
-    //Handling more than 2 input as well in the input string like "10,10,10,10"
-    const splitExpression = expression.split(","); //Here the delimiter is comma ","
+    //Handling mix of new line delimiters and comma delimeter in input string.
+    const splitExpression = expression.split(/[\n | ,]/); //Use RegExp to handle multiple delimeters.
     var sum = 0;
     for (let element of splitExpression){
         sum+=parseInt(element);

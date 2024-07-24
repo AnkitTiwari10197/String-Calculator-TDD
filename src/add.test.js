@@ -23,3 +23,14 @@ test("Evaluates string of  comma-separated numbers", () => {
     var result = 100;
     expect(calculator.calc(expression)).toEqual(result);
 })
+
+
+//Allowing the add module to handle new lines between numbers (instead of commas). 
+//Like -> ("1\n2,3" should return 6), \n represents new line and sum is 6.
+
+test("Evaluates string of comma and newline-separated numbers", () => {
+    var expression = "1\n2,3";
+    var result = 6;
+    expect(calculator.calc(expression)).toEqual(result);
+})
+
