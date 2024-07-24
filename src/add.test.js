@@ -34,3 +34,14 @@ test("Evaluates string of comma and newline-separated numbers", () => {
     expect(calculator.calc(expression)).toEqual(result);
 })
 
+
+//  To change the delimiter, the beginning of the string will contain a separate line 
+//  that looks like this: "//[delimiter]\n[numbers…]". 
+//  For example, "//;\n1;2" where the delimiter is ";" should return 3.
+
+test("Evaluates string with custom delimiter", () => {
+    var expression = "//;\n1;2;3";
+    var result = 6;
+    expect(calculator.calc(expression)).toEqual(result);
+});
+
