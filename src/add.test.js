@@ -14,3 +14,12 @@ test("Evaluates input string of size 1 or 2 separated by comma", () => {
     var result = 42;          //The sum of the numbers taken.
     expect(calculator.calc(expression)).toEqual(result);
 })
+
+
+//Allow the add module to handle any amount of numbers.
+
+test("Evaluates string of  comma-separated numbers", () => {
+    var expression = "10,10,10,10,10,10,10,10,10,10";
+    var result = 100;
+    expect(calculator.calc(expression)).toEqual(result);
+})
