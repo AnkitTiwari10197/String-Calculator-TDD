@@ -26,8 +26,17 @@ function stringCalculator(expression){
     }
     const splitExpression = numbers.split(delimiter);
     var sum = 0;
+    var negativeArray = [];
     for (let element of splitExpression){
-        sum += parseInt(element);
+        if (parseInt(element) <0){
+            negativeArray.push(parseInt(element));
+        }else{
+            sum += parseInt(element);
+        }
+    }
+
+    if (negativeArray.length>0){
+        throw new Error(`negative numbers not allowed: ${negativeArray.join(', ')}`)
     }
     return sum;
 
